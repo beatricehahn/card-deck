@@ -11,4 +11,23 @@ from card import Card
 # Deck  should have an instance method called deal_hand  which accepts a number and uses the _deal  method to deal a list of cards from the deck and return that list of cards
 
 class Deck:
-    pass
+
+    def __init__(self):
+        SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
+        VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+        self.cards = [Card(value, suit) for suit in SUITS for value in VALUES]
+
+    def __repr__(self):
+        pass
+
+    def _deal(self):
+        pass
+
+    def shuffle(self):
+        pass
+
+    def deal_card(self):
+        pass
+
+    def deal_hand(self):
+        pass
