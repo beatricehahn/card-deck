@@ -12,7 +12,6 @@ from random import shuffle
 # Deck  should have an instance method called deal_hand  which accepts a number and uses the _deal  method to deal a list of cards from the deck and return that list of cards
 
 class Deck:
-
     def __init__(self):
         SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
         VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]

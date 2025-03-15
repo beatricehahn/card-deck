@@ -7,7 +7,6 @@
 # Card 's __repr__  method should return the card's value and suit (e.g. "A of Clubs", "J of Diamonds", etc.)
 
 class Card:
-
     def __init__(self, val, suit):
         self.value = val
         self.suit = suit
