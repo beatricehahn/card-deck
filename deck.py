@@ -1,4 +1,5 @@
 from card import Card
+from random import shuffle
 
 # Deck requirements:
 
@@ -17,17 +18,32 @@ class Deck:
         VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
         self.cards = [Card(value, suit) for suit in SUITS for value in VALUES]
 
+    def count(self):
+        return len(self.cards)
+    
     def __repr__(self):
-        pass
+        return f"Deck of {self.count()} cards"
 
-    def _deal(self):
-        pass
+    def _deal(self, num):
+        # check how many cards are in the deck
+        count = self.count()
+        # determine the smaller value to use for taking out cards
+        actual = min([count, num])
+        if count == 0:
+            raise ValueError("All cards have been dealt")
+        # save the cards to be dealt in cards_to_deal, taking from the end of the deck
+        cards_to_deal = self.cards[-actual:]
+        # update deck
+        self.cards = self.cards[:-actual]
+        return cards_to_deal
 
     def shuffle(self):
-        pass
+        if self.count() < 52:
+            raise ValueError("Only full decks can be shuffled")
+        shuffle(self.cards)
 
     def deal_card(self):
-        pass
+        return self._deal(1)[0]
 
-    def deal_hand(self):
-        pass
+    def deal_hand(self, hand_size):
+        return self._deal(hand_size)
