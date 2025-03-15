@@ -7,16 +7,10 @@
 # Card 's __repr__  method should return the card's value and suit (e.g. "A of Clubs", "J of Diamonds", etc.)
 
 class Card:
-    SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
-    VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
-    @classmethod
-    def valid_card(cls):
-        pass
-
-    def __init__(self, suit, val):
-        self.suit = suit
+    def __init__(self, val, suit):
         self.value = val
+        self.suit = suit
     
     def __repr__(self):
-        return f" {self.value} of {self.suit}"
+        return f"{self.value} of {self.suit}"
